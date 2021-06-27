@@ -30,6 +30,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * MainActivity set launchMode="singleTask"
+     */
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
         if (canHandleDeepLink(intent?.data)) {
@@ -39,6 +42,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun canHandleDeepLink(data: Uri?): Boolean = Deeplink.annotationDeeplinks.containsKey(data.toString())
 
+    /**
+     * Create fragment with reflexion and commit fragment
+     */
     private fun startDeepLinkFragment(data: Uri?) {
         val fragment = Deeplink.annotationDeeplinks[data.toString()]?.newInstance()
         if (fragment != null) {
