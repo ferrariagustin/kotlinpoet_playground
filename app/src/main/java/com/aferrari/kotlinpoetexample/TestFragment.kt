@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.aferrari.annotation.AnnotationDeeplink
 
-@AnnotationDeeplink("test://test_fragment2")
+@AnnotationDeeplink("test://test_fragment")
 class TestFragment: Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
