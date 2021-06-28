@@ -22,9 +22,9 @@ class Processor : AbstractProcessor() {
     /**
      * Indicate with which annotation we are going to work
      */
-    override fun getSupportedAnnotationTypes() = setOf(ProcessorUtils.ANNOTATION_DEEPLINK.canonicalName)
+    override fun getSupportedAnnotationTypes(): Set<String> = setOf(ProcessorUtils.ANNOTATION_DEEPLINK.canonicalName)
 
-    override fun process(annotations: MutableSet<out TypeElement>?, roundEnv: RoundEnvironment): Boolean {
+    override fun process(annotations: Set<TypeElement>?, roundEnv: RoundEnvironment): Boolean {
         val annotatedElements = roundEnv.getElementsAnnotatedWith(ProcessorUtils.ANNOTATION_DEEPLINK)
         loadAnnotationElements(annotatedElements)
 
